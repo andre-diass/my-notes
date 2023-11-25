@@ -1,14 +1,9 @@
-db.collection.aggregate([
-  {"$match": {
-              "composicao":"ferro"
-             }
-  },
-  {"$group":
-    {
-      "_id": "$vendedor",
-      "soma_total": {
-                      "$sum": 1
-                    }
-    }
+```json
+db.collection.find(
+  {
+    campo1:"valor",
+    campo2:"valor",
+    ...
   }
-])
+)
+```
