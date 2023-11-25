@@ -1,9 +1,0 @@
-```json
-db.collection.find(
-  {
-    campo1:"valor",
-    campo2:"valor",
-    ...
-  }
-)
-```
