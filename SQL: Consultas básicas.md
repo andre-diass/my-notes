@@ -1,18 +1,33 @@
-# SQL: Consultas básicas
+# Sumário
 
-## Introdução
+- [SQL: Consultas básicas](#sql-consultas-básicas)
+  - [Introdução](#introdução)
+  - [Notas](#notas)
+  - [Definições](#definições)
+  - [Comandos básicos](#comandos-básicos)
+  - [Tipos de Dados](#tipos-de-dados)
+    - [Campos Numéricos (Inteiros e Decimais)](#campos-numéricos-inteiros-e-decimais)
+    - [Data e Hora](#data-e-hora)
+    - [String](#string)
+    - [Outros](#outros)
+    - [Atributos de Campos Numéricos](#atributos-de-campos-numéricos)
+  - [SQL pelo Shell](#sql-pelo-shell)
+
+## SQL: Consultas básicas
+
+### Introdução
 
 - `DDL:` DDLs são a parte da linguagem SQL que permite a manipulação das estruturas do banco de dados. Como, por exemplo, criar um banco, tabelas, índices, apagar as tabelas e alterar a política de crescimento de índice
 - `DML:` Esse grupo visa gerenciar os dados: incluindo, alterando e excluindo informações nas estruturas do banco, como as tabelas
 - `DCL:` Administrar o banco de dados como, por exemplo, o controle de acesso, o gerenciamento do usuário, gerenciar o que cada usuário(a) pode ou não visualizar, gerenciar o banco ao nível de estrutura
 
-## Notas
+### Notas
 
 - `MISSÃO CRÍTICA:` todo sistema tecnológico fundamental para que os serviços de uma empresa continuem operando sem interrupções.
 - `SOBRE CHAVES E INDÍCES:` Quando temos uma chave estrangeira, automaticamente o banco de dados cria índices nos campos que se interrelacionam, para que seja viável, por exemplo, ao cadastrar um cliente na "tabela_vendas" o banco de dados, internamente, verifique se o cliente consta na "tabela_cadastro_clientes" e para encontrar rápido é proveitoso que a tabela original já possua índice
 - `CONCEITOS RESUMO_1:` No banco de dados há diversas tabelas, composta por campos (colunas) e registros (linhas), essas tabelas possuem chaves estrangeiras, primárias e podem conter índices.
 
-## Definições
+### Definições
 
 - `ENTIDADES:` Estruturas que organizam como os dados são armazenados.
 - `TABELA:` Uma das principais entidades e podendo conter várias no mesmo banco de dados.
@@ -30,7 +45,7 @@
 - `FUNÇÃO:` Cálculos montados com campos que podemos usar dentro de um comando de consulta. Podemos criar uma função que facilite uma visualização ou contabilização e usa-lá para realizar as consultas.
 - `TRIGGER:` Este é um aviso programado caso algo ocorra no banco de dados ou tabela. Como, se quisermos ser avisados caso alguém realize alguma alteração ou delete informações nas tabelas.
 
-## Comandos básicos
+### Comandos básicos
 
 - `SELECT * FROM <tabela>`
 - `SELECT <campo> <campo>.. FROM <tabela>`
@@ -46,9 +61,9 @@
 - `ALTER TABLE <tabela> ADD PRIMARY KEY <nome da coluna que vai ser a chave primária>`
 - `ALTER TABLE <tabela> ADD COLUMN (<nova coluna> <tipo de dado>)`
 
-# Tipos de Dados
+## Tipos de Dados
 
-## Campos Numéricos (Inteiros e Decimais):
+### Campos Numéricos (Inteiros e Decimais)
 
 - **Inteiros:**
   - `TINYINT`
@@ -62,7 +77,7 @@
   - Decimais Fixos: `DECIMAL` E `NUMERIC`
   - `BIT`
 
-## Data e Hora: <!-- Ao trabalhar com datas no formato '2015-01-01', posso selecionar algo específico, como `YEAR(<nome do campo que tem a data>)` -->
+### Data e Hora <!-- Ao trabalhar com datas no formato '2015-01-01', posso selecionar algo específico, como `YEAR(<nome do campo que tem a data>)` -->
 
 - `DATE`
 - `DATETIME`
@@ -70,7 +85,7 @@
 - `TIME`
 - `YEAR`
 
-## String:
+### String
 
 - `CHAR`
 - `VARCHAR`: Não armazena os espaços
@@ -79,7 +94,7 @@
 - `BLOB`: `TINYBLOB`, `BLOB`, `MEDIUMBLOB` e `LONGBLOB`
 - `TEXT`: `TINYTEXT`, `TEXT`, `MEDIUMTEXT` e `LONGTEXT`
 
-## Outros:
+### Outros
 
 - `SPATIAL`
 - `POINT`
@@ -87,19 +102,16 @@
 - `GEOMETRY`
 - `POLYGON`
 
-## Atributos de Campos Numéricos:
+### Atributos de Campos Numéricos
 
 - `signed` e `unsigned`
 - `zerofill`
 - `auto_increment`
 - `set` e `collate`: Estão relacionados com as cadeias de caracteres que serão usados para armazenar o texto. Caso queira guardar texto em alguma língua diferente, por exemplo
 
+## SQL pelo Shell
 
-
-## SQL pelo Shell:
-
-`mysql -h localhost -u root -p`  => Depois de ter executado o SQL executável <br>
-`mysqlsh`                                => spin up the server <br>
-`\connect localhost -u root -p`          => conectar à porta <br>
-`\sql`                                   => mudar pra sql <br>
-
+- `mysql -h localhost -u root -p`  => Depois de ter executado o SQL executável 
+- `mysqlsh`                                => spin up the server 
+- `\connect localhost -u root -p`          => conectar à porta 
+- `\sql`                                   => mudar pra sql 
